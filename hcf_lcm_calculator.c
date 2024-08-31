@@ -14,10 +14,13 @@ int main() {
     temp2 = num2;
 
     // Calculate HCF using the Euclidean algorithm
-    while (num2 != 0) {
-        int remainder = num1 % num2;
-        num1 = num2;
-        num2 = remainder;
+    while (num1 != num2) {
+       if(num1>num2){
+        num1=num1-num2;
+       } 
+       else{
+        num2=num2-num1;
+       }
     }
     hcf = num1; // HCF is the remaining number
 
@@ -30,4 +33,4 @@ int main() {
 
     return 0;
 }
-12
+

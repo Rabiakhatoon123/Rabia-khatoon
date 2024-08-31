@@ -1,21 +1,34 @@
 #include <stdio.h>
 
 int main() {
-    char c;
+    char str[100];
+    int vowels = 0, consonants = 0, i;
 
-    // Prompt the user to enter a character
-    printf("Enter a character: ");
-    scanf("%c", &c);
+    // Input a string using scanf
+    printf("Enter a string: ");
+    scanf("%s", str); // This will read a single word (without spaces)
 
-    // Check if the character is a vowel
-    if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' ||
-        c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U') {
-        printf("%c is a vowel.\n", c);
-    } else {
-        printf("%c is a consonant.\n", c);
+    // Loop through the string
+    for (i = 0; str[i] != '\0'; i++) {
+        char c = str[i];
+
+        // Check for vowels
+        if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' ||
+            c == 'A' || c == 'E' || c == 'I' || c == 'O' || c == 'U') {
+            vowels++;
+        }
+        // Check for consonants (letters that are not vowels)
+        else if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')) {
+            consonants++;
+        }
     }
+
+    // Print results
+    printf("Vowels: %d\n", vowels);
+    printf("Consonants: %d\n", consonants);
 
     return 0;
 }
+
 
 
